@@ -1,4 +1,11 @@
-// terminal colors to make it look pretty
+/*
+ * termcolors.h
+ *
+ * Muhammad Daffa Rahman
+ * L0124062
+ *
+ * Definitions untuk warna yang dapat ditampilkan di terminal (to make it look pretty)
+ */
 
 #ifndef TERMCOLORS_H
 #define TERMCOLORS_H
