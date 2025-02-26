@@ -56,7 +56,7 @@ void do_int_test(int(func)(int, int), char *func_name, struct TestInt tests[], i
 		// dapat mengetahui indeks ke berapa dari tests yang salah
 		if (!test_result)
 		{
-			fprintf(stderr, "%s%s:%d, on iteration i=%d, DivisionByZeroError: Can't divide a number with zero! (b cannot be equal to 0)%s\nExited with exit code 1\n", COLOR_FAILED, __FILE__, __LINE__, i, COLOR_DEFAULT);
+			fprintf(stderr, "%s%s:%d: failed on iteration i=%d: %s(%d, %d) = %d%s\nExited with exit code 1\n", COLOR_FAILED, __FILE__, __LINE__, i, func_name, a, b, result, COLOR_DEFAULT);
 			exit(1);
 		}
 		// jika test_result adalah true atau sukses
