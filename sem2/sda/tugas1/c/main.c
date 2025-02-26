@@ -12,16 +12,6 @@
 
 #include "math_operations.h"
 
-// fungsi clear screen yang dapat work di windows dan non-windows (mac, linux)
-void clear_screen()
-{
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-
 void print_add(int a, int b)
 {
     printf("%d + %d = %d\n", a, b, add(a, b));
@@ -50,8 +40,6 @@ int main()
     // input akan menerima char* kemudian dirubah ke int menggunakan fungsi atoi()
     char *str_input = (char *)malloc(sizeof(char) * 255);
     int int_input = 0;
-
-    clear_screen();
 
     printf("Welcome to ZuperSymple Calculator\n\n");
 
