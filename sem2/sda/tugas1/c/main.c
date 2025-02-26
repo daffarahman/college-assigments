@@ -9,27 +9,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "math_operations.h"
 
-void print_add(int a, int b)
+void print_operation_int(int(func)(int, int), int a, int b, char operator)
 {
-    printf("%d + %d = %d\n", a, b, add(a, b));
+    printf("%d %c %d = %d\n", a, operator, b, func(a, b));
 }
 
-void print_subtract(int a, int b)
+void print_operation_double(double(func)(int, int), int a, int b, char operator)
 {
-    printf("%d + %d = %d\n", a, b, subtract(a, b));
-}
-
-void print_multiply(int a, int b)
-{
-    printf("%d + %d = %d\n", a, b, multiply(a, b));
-}
-
-void print_divide(int a, int b)
-{
-    printf("%d + %d = %.2f\n", a, b, divide(a, b));
+    printf("%d %c %d = %.2f\n", a, operator, b, func(a, b));
 }
 
 int main()
@@ -69,19 +60,19 @@ int main()
     {
     case 5:
     case 1:
-        print_add(a, b);
+        print_operation_int(add, a, b, '+');
         if (int_input != 5)
             break;
     case 2:
-        print_subtract(a, b);
+        print_operation_int(subtract, a, b, '-');
         if (int_input != 5)
             break;
     case 3:
-        print_multiply(a, b);
+        print_operation_int(multiply, a, b, '*');
         if (int_input != 5)
             break;
     case 4:
-        print_divide(a, b);
+        print_operation_double(divide, a, b, '/');
         if (int_input != 5)
             break;
     }
